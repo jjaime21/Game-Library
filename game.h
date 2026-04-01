@@ -10,14 +10,16 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <string>
+
 class game{
 
  private:
 
   //all variables that goes into a game description
-  string title;
-  string publisher;
-  string genre;
+  std:: string title;
+  std::string publisher;
+  std::string genre;
   float playtime;
   float price;
   int year;
@@ -33,7 +35,23 @@ class game{
  * 
  */
   game();
-  
+
+
+/**
+ * adds the variables to the game
+ *
+ * @param std::string t title
+ * @param std::string p publisher
+ * @param std::string g genre
+ * @param float pt play time
+ * @param float pr price
+ * @param int y year
+ * @pre 
+ * @return void a full game
+ * @post 
+ * 
+ */
+  void setgame(std::string t,std::string p, std::string g, float pt, float pr, int y)
 };
 
 #endif
