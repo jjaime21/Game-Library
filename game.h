@@ -41,17 +41,17 @@ class game{
  * adds the variables to the game
  *
  * @param std::string t title
- * @param std::string p publisher
+ * @param std::string pb publisher
  * @param std::string g genre
  * @param float pt play time
- * @param float pr price
+ * @param float p price
  * @param int y year
  * @pre 
  * @return void a full game
  * @post 
  * 
  */
-  void setgame(std::string t,std::string p, std::string g, float pt, float pr, int y)
+  void setgame(std::string t,std::string pb, std::string g, float pt, float p, int y);
 };
 
 #endif

@@ -1,0 +1,50 @@
+/**
+ * @file game.cpp
+ * @author Jose Jaime and Isaac Mcknew
+ * @date 2026-04-01
+ * @brief implementation of game
+ * 
+ * creates a game with its variables
+ */
+
+#include "game.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+game::game(){
+  //initializing variables
+  string title = "";
+  string publisher = "";
+  string genre = "";
+  float playtime = 0;
+  float price = 0;
+  int year = 0;
+}
+  
+
+
+/**
+ * changes the game description
+ *
+ * @param string t title
+ * @param string pb publisher
+ * @param string g genre
+ * @param float pt playtime
+ * @param float p price
+ * @param int y year
+ * @pre 
+ * @return void a whole game description
+ * @post 
+ * 
+ */
+void game::setgame(string t, string pb, string g, float pt, float p, int y){
+  title = t;
+  publisher = pb;
+  genre = g;
+  playtime = pt;
+  price = p;
+  year = y;
+}
+   
