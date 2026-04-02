@@ -1,0 +1,42 @@
+Super Mario World
+Nintendo
+platformer
+150.50
+34.99
+1991
+The Legend of Zelda: Ocarina of Time
+Nintendo
+action-adventure
+130.50
+25.99
+1998
+GoldenEye 007
+Nintendo
+FPS
+187.50
+40.99
+1997
+Doom 3
+Activision
+FPS
+162.35
+9.99
+2004
+Super Mario 64
+Nintendo
+platformer
+120.45
+37.99
+1996
+Portal 2
+Valve
+puzzle
+162.25
+9.99
+2011
+Minecraft
+Mojang Studios
+sandbox
+140.25
+29.99
+2011
