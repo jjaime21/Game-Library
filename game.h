@@ -17,7 +17,7 @@ class game{
  private:
 
   //all variables that goes into a game description
-  std:: string title;
+  std::string title;
   std::string publisher;
   std::string genre;
   float playtime;
@@ -54,4 +54,4 @@ class game{
   void setgame(std::string t,std::string pb, std::string g, float pt, float p, int y);
 };
 
-#endif
+#endif //GAME_H
