@@ -77,17 +77,23 @@ void library::read_from_file(string fileName){
 }
 
 void library::write_to_file(string fileName){
-  ofstream file(filename);
+  ofstream outputFile(fileName);
 
-  if(!file){
-    cout << "error opening file" << endl;
+  if(!outputFile.is_open()){
+    cout << "Error creating the output file." << endl;
+    return;
   }
 
-  for(const auto& g : games){
-    file << g.getTitle() << endl << g.getPub() << endl << g.getGenre() << endl << g.getPlaytime() << endl
-	 << g.getPrice() << endl << g.getYear() << endl;
+  for(auto it = games.begin(); it != games.end(); ++it){
+    outputFile << it->getTitle() << endl;
+    outputFile << it->getPub() << endl;
+    outputFile << it->getGenre() << endl;
+    outputFile << it->getPlaytime() << endl;
+    outputFile << it->getPrice() << endl;
+    outputFile << it->getYear() << endl;
+    
   }
-  file.close();
+  outputFile.close();
 }
 
 void library::insert_sorted(string title, string publisher, string genre, float hoursPlayed, float price, int year){
@@ -106,6 +112,22 @@ void library::insert_sorted(string title, string publisher, string genre, float 
 
 void library::print() {
   cout << "Game Library:" << endl;
+  cout << setw(30) << "Title"
+       << setw(30) << "Publisher"
+       << setw(20) << "Genre"
+       << setw(15) << "Hours Played"
+       << setw(15) << "Price"
+       << "Year" << endl;
+
+  for(auto it = games.begin(); it != games.end(); ++it) {
+    cout << setw(30) << it->getTitle()
+         << setw(30) << it->getPub()
+         << setw(20) << it->getGenre()
+         << setw(15) << it->getPlaytime()
+         << setw(15) << it->getPrice()
+         << it->getYear() << endl;
+
+  }
 
 
 

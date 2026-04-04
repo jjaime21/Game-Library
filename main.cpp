@@ -14,6 +14,7 @@
 using namespace std;
 
 int main() {
+  library gamelibrary;
   string fileName = "database.txt";
 
 
@@ -28,24 +29,26 @@ int main() {
   cout << "8 Exit this program" << endl << endl;
 
   int choice = 0;
-  string last;
-  string phone;
+  string title, publisher, genre;
+  float hoursPlayed, price;
+  int year;
   cout << "Please enter your choice now: ";
   cin >> choice;
+  cin.ignore();
   while(choice != 8){
     switch(choice) {
     case 1:
       cout << "Reading current database.txt file" << endl;
-      // Read file function
+      gamelibrary.read_from_file(fileName);
       cout << endl;
       break;
     case 2:
       cout << "Writing new database.txt file" << endl;
-      // Write file function
+      gamelibrary.write_to_file(fileName);
       cout << endl;
       break;
     case 3:
-      // Print function
+      gamelibrary.print();
       break;
     case 4:
       cout << "Enter the specific genre of the game: " << endl;
@@ -56,7 +59,19 @@ int main() {
       // Find_game function
       break;
     case 6:
-      cout << "6 Add a game" << endl;
+      cout << "Enter the game title: ";
+      getline(cin, title);
+      cout << "Enter the Publisher: ";
+      getline(cin, publisher);
+      cout << "Enter the Genre: ";
+      getline(cin, genre);
+      cout << "Enter the hours played: ";
+      cin >> hoursPlayed;
+      cout << "Enter the price: ";
+      cin >> price;
+      cout << "Enter the year: ";
+      cin >> year;
+      gamelibrary.insert_sorted(title, publisher, genre, hoursPlayed, price, year);
       break;
     case 7:
       cout << "Enter the game title and release year to delete: ";

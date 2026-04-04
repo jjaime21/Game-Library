@@ -15,12 +15,12 @@ using namespace std;
 
 game::game(){
   //initializing variables
-  string title = "";
-  string publisher = "";
-  string genre = "";
-  float playtime = 0;
-  float price = 0;
-  int year = 0;
+  title = "";
+  publisher = "";
+  genre = "";
+  playtime = 0;
+  price = 0;
+  year = 0;
 }
   
 
@@ -52,7 +52,7 @@ string game::getTitle(){
   return title;
 }
 
-string game::getPb(){
+string game::getPub(){
   return publisher;
 }
 
