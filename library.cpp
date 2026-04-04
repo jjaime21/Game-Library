@@ -128,8 +128,8 @@ void library::print() {
          << it->getYear() << endl;
 
   }
-
-
+  
+  cout << endl;
 
 }
   
