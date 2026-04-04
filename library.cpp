@@ -1,8 +1,5 @@
 /**
  * @file library.cpp
- * @author LAPTOP-MLRB421O
- * @date 2026-04-03/**
- * @file library.cpp
  * @author Isaac McKnew and Jose Jaime
  * @date 2026-04-01
  * @brief Library class
@@ -32,8 +29,6 @@ using namespace std;
 library::library(){
   //file we read from and read into
   string filename = "database.txt";
-
-  list<game> games; //delcare this so I don't redeclare
   
 }
 
@@ -53,26 +48,35 @@ void library::push_back(string title, string publisher, string genre, float hour
   games.push_back(g);
 }
 
-void library::read_from_file(string filename){
-  ifstream file(filename);
+void library::read_from_file(string fileName){
+  ifstream inputFile(fileName);
 
-  if(!file){
-    cout << "error opening file" << endl;
+  if(!inputFile.is_open()){
+    cout << "Please choose a valid file" << endl;
+    return;
   }
 
   //create variables to read the file into and then put the variables through the insert sorted function so
   //everything is sorted
-  string t,pb,g;
-  float hp,p;
-  int y;
-  while(file >> t >> pb >> g >> hp >> p >> y){
-    insert_sorted(t, pb, g, hp, p, y);
+  string title, publisher, genre;
+  float hoursPlayed, price;
+  int year;
+  
+  while(getline(inputFile, title)){
+    getline(inputFile, publisher);
+    getline(inputFile, genre);
+    inputFile >> hoursPlayed;
+    inputFile >> price;
+    inputFile >> year;
+    inputFile.ignore();
+    
+    insert_sorted(title, publisher, genre, hoursPlayed, price, year);
   }
 
-  file.close();
+  inputFile.close();
 }
 
-void library::write_to_file(filename){
+void library::write_to_file(string fileName){
   ofstream file(filename);
 
   if(!file){
@@ -81,7 +85,7 @@ void library::write_to_file(filename){
 
   for(const auto& g : games){
     file << g.getTitle() << endl << g.getPub() << endl << g.getGenre() << endl << g.getPlaytime() << endl
-	 << g.getPrice << endl << g.getYear << endl;
+	 << g.getPrice() << endl << g.getYear() << endl;
   }
   file.close();
 }
@@ -93,12 +97,20 @@ void library::insert_sorted(string title, string publisher, string genre, float 
 
   auto it = games.begin();
 
-  while(it != games.end() && it->getTitle < g.getTitle()){
+  while(it != games.end() && it->getTitle() < g.getTitle()){
     it++;
   }
 
   games.insert(it,g);
 }
+
+void library::print() {
+  cout << "Game Library:" << endl;
+
+
+
+}
+  
   
 
 
