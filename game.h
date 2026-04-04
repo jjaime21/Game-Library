@@ -54,4 +54,18 @@ class game{
   void setgame(std::string t,std::string pb, std::string g, float pt, float p, int y);
 };
 
+//adding getters to access the private variables
+
+std::string getTitle();
+
+std::string getPub();
+
+std::string getGenre();
+
+float getPlaytime();
+
+float getPrice();
+
+int getYear();
+
 #endif //GAME_H

@@ -48,3 +48,26 @@ void game::setgame(string t, string pb, string g, float pt, float p, int y){
   year = y;
 }
    
+string game::getTitle(){
+  return title;
+}
+
+string game::getPb(){
+  return publisher;
+}
+
+string game::getGenre(){
+  return genre;
+}
+
+float game::getPlaytime(){
+  return playtime;
+}
+
+float game::getPrice(){
+  return price;
+}
+
+int game::getYear(){
+  return year;
+}
