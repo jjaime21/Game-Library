@@ -173,9 +173,23 @@ void library::print() {
 }
 
 void library::delete_game(string title, int year) {
+  size_t initialSize = games.size();
 
+  auto it = games.begin();
+  while(it != games.end()) {
+    if(it->getTitle() == title && it->getYear() == year) {
+      it = games.erase(it);
+    }else {
+      ++it;
+    }
+  }
 
-
+  if(games.size() == initialSize) {
+    cout << "No games found with the title " << title << " and year " << year << endl;
+  }else {
+    cout << "The game was deleted successfully." << endl;
+  }
+  
 }
   
   

@@ -79,8 +79,12 @@ int main() {
       gamelibrary.insert_sorted(title, publisher, genre, hoursPlayed, price, year);
       break;
     case 7:
-      cout << "Enter the game title and release year to delete: ";
-      // delete function
+      cout << "Enter the game title to delete: ";
+      cin.ignore();
+      getline(cin, title);
+      cout << "Enter the year the game was released: ";
+      cin >> year;
+      gamelibrary.delete_game(title, year);
       cout << endl;
       break;
     case 8:
