@@ -26,8 +26,11 @@ int main() {
   cout << "5 Find all of the games by game title" << endl;
   cout << "6 Add a game" << endl;
   cout << "7 Delete a game" << endl;
-  cout << "8 Exit this program" << endl << endl;
-
+  cout << "8 Exit this program" << endl;
+  cout << "9 Push a game to the front of the list" << endl;
+  cout << "10 Add a game onto the back of the list" << endl << endl;
+  
+   
   int choice = 0;
   string title, publisher, genre;
   float hoursPlayed, price;
@@ -90,8 +93,41 @@ int main() {
     case 8:
       cout << "8 Exit this program" << endl << endl;
       break;
+    case 9:
+      cout << "Enter the game title: ";
+      cin.ignore();
+      getline(cin, title);
+      cout << "Enter the Publisher: ";
+      getline(cin, publisher);
+      cout << "Enter the Genre: ";
+      getline(cin, genre);
+      cout << "Enter the hours played: ";
+      cin >> hoursPlayed;
+      cout << "Enter the price: ";
+      cin >> price;
+      cout << "Enter the year: ";
+      cin >> year;
+      gamelibrary.push_front(title, publisher, genre, hoursPlayed, price, year);
+      break;
+    case 10:
+            cout << "Enter the game title: ";
+      cin.ignore();
+      getline(cin, title);
+      cout << "Enter the Publisher: ";
+      getline(cin, publisher);
+      cout << "Enter the Genre: ";
+      getline(cin, genre);
+      cout << "Enter the hours played: ";
+      cin >> hoursPlayed;
+      cout << "Enter the price: ";
+      cin >> price;
+      cout << "Enter the year: ";
+      cin >> year;
+      gamelibrary.push_back(title, publisher, genre, hoursPlayed, price, year);
+      break;
+      
     default:
-      cout << "Please enter a number 1 through 8" << endl;
+      cout << "Please enter a number 1 through 10" << endl;
       break;
 
 
@@ -104,7 +140,9 @@ int main() {
     cout << "5 Find all of the games by game title" << endl;
     cout << "6 Add a game" << endl;
     cout << "7 Delete a game" << endl;
-    cout << "8 Exit this program" << endl << endl;
+    cout << "8 Exit this program" << endl;
+    cout << "9 Push a game to the front of the list" << endl;
+   cout << "10 Add a game onto the back of the list" << endl << endl;
 
 
     
