@@ -51,15 +51,20 @@ int main() {
       gamelibrary.print();
       break;
     case 4:
-      cout << "Enter the specific genre of the game: " << endl;
-      // Find_genre function
+      cout << "Enter the specific genre of the game: ";
+      cin.ignore();
+      getline(cin, genre);
+      cout << gamelibrary.find_genre(genre) << endl;
       break;
     case 5:
       cout << "Enter the game title to find all of the associated games: ";
-      // Find_game function
+      cin.ignore();
+      getline(cin, title);
+      cout << gamelibrary.find_game(title) << endl;
       break;
     case 6:
       cout << "Enter the game title: ";
+      cin.ignore();
       getline(cin, title);
       cout << "Enter the Publisher: ";
       getline(cin, publisher);

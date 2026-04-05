@@ -110,6 +110,45 @@ void library::insert_sorted(string title, string publisher, string genre, float 
   games.insert(it,g);
 }
 
+string library::find_genre(string genre) {
+  string statement = "Games found with genre " + genre + "\n";
+  string gamesList = "";
+  string noGames = "No games found with genre " + genre + "\n";
+
+  for(auto it = games.begin(); it != games.end(); ++it) {
+    if(it->getGenre() == genre) {
+      gamesList += it->getTitle() + "\n";
+    } 
+  }
+
+  if(gamesList == "") {
+    return noGames;
+  }
+
+  return statement + gamesList;
+
+}
+
+string library::find_game(string title) {
+  string statement = "Games found with the title " + title + "\n";
+  string gamesList = "";
+  string noGames = "No games found with the title " + title + "\n";
+
+  for(auto it = games.begin(); it != games.end(); ++it) {
+    if(it->getTitle() == title) {
+      gamesList += it->getTitle() + "\n";
+    }
+  }
+
+  if(gamesList == "") {
+    return noGames;
+  }
+
+  return statement + gamesList;
+
+
+}
+
 void library::print() {
   cout << "Game Library:" << endl;
   cout << setw(30) << "Title"
@@ -130,6 +169,12 @@ void library::print() {
   }
   
   cout << endl;
+
+}
+
+void library::delete_game(string title, int year) {
+
+
 
 }
   
