@@ -56,6 +56,8 @@ void library::read_from_file(string fileName){
     return;
   }
 
+  games.clear(); // Prevent duplicate data from showing
+
   //create variables to read the file into and then put the variables through the insert sorted function so
   //everything is sorted
   string title, publisher, genre;
