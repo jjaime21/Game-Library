@@ -133,9 +133,12 @@ string library::find_game(string title) {
   string statement = "Games found with the title " + title + "\n";
   string gamesList = "";
   string noGames = "No games found with the title " + title + "\n";
-
+  
+  // Got help from the string library find search function found on cppreference
+  // to check if the title string matches the given title substring
+  // https://en.cppreference.com/w/cpp/string/basic_string/find.html
   for(auto it = games.begin(); it != games.end(); ++it) {
-    if(it->getTitle() == title) {
+    if(it->getTitle().find(title) != string::npos) {
       gamesList += it->getTitle() + "\n";
     }
   }
@@ -150,20 +153,24 @@ string library::find_game(string title) {
 }
 
 void library::print() {
+  cout << fixed << setprecision(2);
+
+  
   cout << "Game Library:" << endl;
-  cout << setw(30) << "Title"
-       << setw(30) << "Publisher"
+  cout << left
+       << setw(40) << "Title"
+       << setw(20) << "Publisher"
        << setw(20) << "Genre"
        << setw(15) << "Hours Played"
-       << setw(15) << "Price"
+       << setw(12) << "Price"
        << "Year" << endl;
 
   for(auto it = games.begin(); it != games.end(); ++it) {
-    cout << setw(30) << it->getTitle()
-         << setw(30) << it->getPub()
+    cout << setw(40) << it->getTitle()
+         << setw(20) << it->getPub()
          << setw(20) << it->getGenre()
          << setw(15) << it->getPlaytime()
-         << setw(15) << it->getPrice()
+         << "$" << setw(11) << it->getPrice()
          << it->getYear() << endl;
 
   }

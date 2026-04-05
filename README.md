@@ -5,8 +5,7 @@ menu-driven system. Each menu option is handled by its own function from the lib
 the work by reviewing each others code as we updated the repository.
 
 To run the program, please run the following commands:
-Make
-./test
+run make, then run ./test
 Then, use the menu options to access the game library.
 
 
@@ -18,3 +17,6 @@ Fixed getter functions being outside of the game class - We moved the }; to afte
 Fixed variables being redeclared in game.cpp constructor - We removed the type names so that the values are assigned
                                                            to the game class's member variables instead of creating
 							   a new variable.
+
+Fixed find game function returning only exact game title - We used the string library find search function found on cppreference to
+check if the title string contains the given title substring. https://en.cppreference.com/w/cpp/string/basic_string/find.html

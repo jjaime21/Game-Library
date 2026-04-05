@@ -110,7 +110,7 @@ int main() {
       gamelibrary.push_front(title, publisher, genre, hoursPlayed, price, year);
       break;
     case 10:
-            cout << "Enter the game title: ";
+      cout << "Enter the game title: ";
       cin.ignore();
       getline(cin, title);
       cout << "Enter the Publisher: ";
@@ -142,7 +142,7 @@ int main() {
     cout << "7 Delete a game" << endl;
     cout << "8 Exit this program" << endl;
     cout << "9 Push a game to the front of the list" << endl;
-   cout << "10 Add a game onto the back of the list" << endl << endl;
+    cout << "10 Add a game onto the back of the list" << endl << endl;
 
 
     
